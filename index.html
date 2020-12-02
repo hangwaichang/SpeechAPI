@@ -1,0 +1,139 @@
+<html lang="zh-Hant-TW" ng-app="myApp">
+
+<head>
+	<title>SpeechSynthesis Example</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+	<!-- Materialize CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+
+	<!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
+	<!-- AngularJS Material -->
+	<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css"> -->
+
+
+	<!-- Your app -->
+	<script type="text/javascript" src="script.js"></script>
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+
+</head>
+
+<body ng-app="materializeApp" ng-controller="myCtrl">
+
+	<!-- Angular Material Dependencies -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script> -->
+
+	<!-- Angular Material Javascript now available via Google CDN; version 1.2.1 used here -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.js"></script> -->
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="section col s8">
+					<div input-field>
+						<h5>選擇語言</h5>
+						<select ng-model="voices.name" material-select>
+							<option ng-repeat="value in voices">{{value.name}}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="section col s8">
+					<h5>你選擇的語言是: <b>{{voices.name}}</b></h5>
+				</div>
+			</div>
+
+			<p class="range-field">
+			<h5 for="volume">音量</h5>
+			<input type="range" id="volume" ng-model="volume" min="0" max="100" />
+			</p>
+			<p class="range-field">
+			<h5 for="rate">速度</h5>
+			<input type="range" id="rate" ng-model="rate" min="0" max="100" />
+			</p>
+			<p class="range-field">
+			<h5 for="pitch">音調</h5>
+			<input type="range" id="pitch" ng-model="pitch" min="0" max="100" />
+			</p>
+
+			<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding="">
+				<div>
+					<md-input-container>
+						<label>輸入文字</label>
+						<input ng-model="msg">
+					</md-input-container>
+			</md-content>
+
+			<a class="waves-effect btn" style=" background: gray" ng-click="action()">開始</a>
+
+		</div>
+	</main>
+</body>
+
+</html>
+
+
+
+<!-- <!doctype html>
+<html ng-app>
+
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+</head>
+
+<body>
+	<div class="well span6">
+		<label>Name:</label>
+		<input type="text" ng-model="name" placeholder="Enter a name here">
+		<hr>
+		<h1>Hello {{ name }}!!</h1>
+	</div>
+</body>
+
+</html> -->
+
+
+
+
+<!-- <div id="page-wrapper">
+  <h1>Web Speech Synthesis Demo</h1>
+  
+  <p id="msg"></p>
+
+  <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
+
+	<div class="option">
+		<label for="voice">Voice</label>
+		<select name="voice" id="voice"></select>
+	</div>
+	<div class="option">
+		<label for="volume">Volume</label>
+		<input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
+	</div>
+	<div class="option">
+		<label for="rate">Rate</label>
+		<input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
+	</div>
+	<div class="option">
+		<label for="pitch">Pitch</label>
+		<input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
+	</div>
+
+	<button id="speak">Speak</button>
+
+</div> -->
